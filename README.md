@@ -2,7 +2,8 @@
 
 A self-contained set of deliberately vulnerable web applications for learning
 how password-based login mechanisms break. Every lab runs locally in Docker —
-no internet, no hosted platform, no account needed.
+no internet, no hosted platform, no account needed. The Docker build itself
+is fully offline too: all Python dependencies are vendored as wheels.
 
 Derived from the PortSwigger Web Security Academy "Authentication" topic
 (username enumeration & brute-force families) and the PentesterLab
