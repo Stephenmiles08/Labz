@@ -11,9 +11,14 @@ Derived from the PortSwigger Web Security Academy "Authentication" topic
 ## Quick start
 
 ```bash
+docker network create --driver bridge --subnet 10.10.0.0/24 --gateway 10.10.0.1 lab_net   # once per host
 docker compose up -d --build     # build + start all six labs
 docker compose ps                # check they are up
 ```
+
+Labs join the external `lab_net` bridge with fixed addresses
+**10.10.0.50 – 10.10.0.55** (lab01 → lab06). The network must exist before
+`compose up` (that one create command above — re-run it on a fresh host).
 
 Each lab is a small Flask app. There is **no database to manage** — state
 lives in memory and is re-seeded whenever the container starts, so:
