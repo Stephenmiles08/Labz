@@ -21,6 +21,8 @@ USERS = [
 
 FLAG = "FLAG{01-different-responses-reveal-valid-usernames}"
 
+DESC = "Reminder: this lab is about the login form answering differently for real vs fake usernames — use that to find administrator, then brute its password from the downloadable list. Your demo account wiener / peter is there so you can see what a real login looks like first."
+
 WL_USER = "wordlists/usernames-01.txt"
 WL_PASS = "wordlists/passwords-01.txt"
 
@@ -46,6 +48,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 1 — Username enumeration via different responses",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),

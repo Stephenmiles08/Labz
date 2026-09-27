@@ -22,6 +22,8 @@ USERS = [
 
 FLAG = "FLAG{03-timing-is-an-enumeration-oracle}"
 
+DESC = "Reminder: the error text won't help you — the clock will. Real accounts make the server work much longer. Time your logins to find administrator, then brute its password from the downloadable list. wiener / peter is your demo account."
+
 WL_USER = "wordlists/usernames-03.txt"
 WL_PASS = "wordlists/passwords-03.txt"
 
@@ -47,6 +49,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 3 — Username enumeration via response timing",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),

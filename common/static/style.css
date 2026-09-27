@@ -67,6 +67,14 @@ body {
   background: linear-gradient(90deg, var(--accent-soft), transparent);
 }
 
+/* one-line lab objective */
+.lab-desc {
+  font-size: 0.9rem; line-height: 1.45; color: var(--muted);
+  margin: 0 0 18px; padding: 10px 14px;
+  border: 1px solid var(--panel-border); border-left: 3px solid var(--accent);
+  border-radius: 10px; background: var(--panel-strong);
+}
+
 /* top bar */
 .topbar {
   display: flex; align-items: center; justify-content: space-between;

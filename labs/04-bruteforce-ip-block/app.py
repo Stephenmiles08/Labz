@@ -25,6 +25,8 @@ USERS = [
 
 FLAG = "FLAG{04-header-trust-and-reset-logic-break-ip-blocks}"
 
+DESC = "Reminder: five wrong logins get an IP blocked — but the block has two cracks. Find them, brute administrator's password from the downloadable list, and grab the flag. wiener / peter is your demo account."
+
 WL_USER = "wordlists/usernames-04.txt"
 WL_PASS = "wordlists/passwords-04.txt"
 
@@ -53,6 +55,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 4 — Broken brute-force protection, IP block",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),

@@ -21,6 +21,8 @@ USERS = [
 
 FLAG = "FLAG{02-byte-level-differences-leak-usernames}"
 
+DESC = "Reminder: the error message looks identical either way — but one invisible extra byte gives real accounts away. Find administrator by comparing responses byte-for-byte, then brute its password from the downloadable list. wiener / peter is your demo account."
+
 WL_USER = "wordlists/usernames-02.txt"
 WL_PASS = "wordlists/passwords-02.txt"
 
@@ -46,6 +48,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 2 — Username enumeration via subtly different responses",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),

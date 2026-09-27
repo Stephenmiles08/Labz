@@ -27,6 +27,7 @@
   {% if user %}
     <section class="card dash">
       {% if lab %}<p class="lab-kicker">{{ lab }}</p>{% endif %}
+      {% if desc %}<p class="lab-desc">{{ desc }}</p>{% endif %}
       <h1>Welcome back, <span class="accent">{{ user }}</span></h1>
       <p class="muted">{{ hero }}</p>
       <div class="stat-row">
@@ -45,6 +46,7 @@
     <section class="card login-card">
       <div class="login-head">
         {% if lab %}<p class="lab-kicker">{{ lab }}</p>{% endif %}
+        {% if desc %}<p class="lab-desc">{{ desc }}</p>{% endif %}
         <h1>Sign in</h1>
         <p class="muted">{{ hero }}</p>
       </div>

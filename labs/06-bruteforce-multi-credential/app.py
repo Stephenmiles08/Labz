@@ -21,6 +21,8 @@ USERS = [
 
 FLAG = "FLAG{06-one-request-can-test-the-whole-wordlist}"
 
+DESC = "Reminder: the login endpoint speaks JSON — and the password field might accept more than one value. One request can carry the whole downloadable wordlist. wiener / peter is your demo account."
+
 WL_USER = "wordlists/usernames-06.txt"
 WL_PASS = "wordlists/passwords-06.txt"
 
@@ -46,6 +48,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 6 — Broken brute-force protection, multiple credentials per request",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),

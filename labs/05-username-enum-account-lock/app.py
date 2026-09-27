@@ -24,6 +24,8 @@ USERS = [
 
 FLAG = "FLAG{05-lockout-messages-are-an-enumeration-oracle}"
 
+DESC = "Reminder: lockout protects accounts… but its own message tells you who it's protecting. Use the lock message to find administrator, then keep testing — the correct password still works. wiener / peter is your demo account."
+
 WL_USER = "wordlists/usernames-05.txt"
 WL_PASS = "wordlists/passwords-05.txt"
 
@@ -54,6 +56,7 @@ def page(user=None, error=None, flag=None):
         hero=HERO,
         footnote=FOOTNOTE,
         lab="Lab 5 — Username enumeration via account lock",
+        desc=DESC,
         wl_user=WL_USER,
         wl_pass=WL_PASS,
         wl_user_lines=_wl_count(WL_USER),
