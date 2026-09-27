@@ -1,0 +1,44 @@
+# Authentication lab suite — teacher configuration
+# Ports: lab01..lab06 = 8101..8106
+services:
+  lab01-username-enum-different:
+    build:
+      context: .
+      dockerfile: labs/01-username-enum-different/Dockerfile
+    ports: ["127.0.0.1:8101:80", "100.99.154.48:8101:80"]
+    restart: unless-stopped
+
+  lab02-username-enum-subtle:
+    build:
+      context: .
+      dockerfile: labs/02-username-enum-subtle/Dockerfile
+    ports: ["127.0.0.1:8102:80", "100.99.154.48:8102:80"]
+    restart: unless-stopped
+
+  lab03-username-enum-timing:
+    build:
+      context: .
+      dockerfile: labs/03-username-enum-timing/Dockerfile
+    ports: ["127.0.0.1:8103:80", "100.99.154.48:8103:80"]
+    restart: unless-stopped
+
+  lab04-bruteforce-ip-block:
+    build:
+      context: .
+      dockerfile: labs/04-bruteforce-ip-block/Dockerfile
+    ports: ["127.0.0.1:8104:80", "100.99.154.48:8104:80"]
+    restart: unless-stopped
+
+  lab05-username-enum-account-lock:
+    build:
+      context: .
+      dockerfile: labs/05-username-enum-account-lock/Dockerfile
+    ports: ["127.0.0.1:8105:80", "100.99.154.48:8105:80"]
+    restart: unless-stopped
+
+  lab06-bruteforce-multi-credential:
+    build:
+      context: .
+      dockerfile: labs/06-bruteforce-multi-credential/Dockerfile
+    ports: ["127.0.0.1:8106:80", "100.99.154.48:8106:80"]
+    restart: unless-stopped

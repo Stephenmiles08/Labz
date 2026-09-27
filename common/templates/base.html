@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · SecureBank</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>:root { --accent: {{ accent }}; }</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="shell">
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 3 34 9v11c0 8.4-5.9 14.7-14 17C11.9 34.7 6 28.4 6 20V9l14-6Z" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="20" cy="19" r="4.4" stroke="var(--accent)" stroke-width="2"/>
+        <rect x="18.6" y="22" width="2.8" height="7" rx="1.4" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-name">SecureBank<span class="brand-sub">employee portal</span></span>
+    </a>
+    {% if user %}<a class="chip" href="/logout">Sign out</a>{% endif %}
+  </header>
+
+  <main>
+  {% if user %}
+    <section class="card dash">
+      {% if lab %}<p class="lab-kicker">{{ lab }}</p>{% endif %}
+      <h1>Welcome back, <span class="accent">{{ user }}</span></h1>
+      <p class="muted">{{ hero }}</p>
+      <div class="stat-row">
+        <div class="stat"><span class="k">Session</span><span class="v">active</span></div>
+        <div class="stat"><span class="k">Role</span><span class="v">{{ "administrator" if user == "administrator" else "employee" }}</span></div>
+        <div class="stat"><span class="k">2FA</span><span class="v">enabled</span></div>
+        <div class="stat"><span class="k">Access</span><span class="v">{{ "elevated" if user == "administrator" else "standard" }}</span></div>
+      </div>
+      {% if admin_flag %}
+      <div class="flag-box"><span class="flag-label">FLAG</span><code class="flag">{{ admin_flag }}</code></div>
+      {% else %}
+      <p class="footnote">Only the administrator account can open the flag vault.</p>
+      {% endif %}
+    </section>
+  {% else %}
+    <section class="card login-card">
+      <div class="login-head">
+        {% if lab %}<p class="lab-kicker">{{ lab }}</p>{% endif %}
+        <h1>Sign in</h1>
+        <p class="muted">{{ hero }}</p>
+      </div>
+      {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+      {% if notice %}<div class="notice">{{ notice }}</div>{% endif %}
+      <form method="POST" action="/login" autocomplete="off">
+        <label>Username<input type="text" name="username" placeholder="e.g. wiener" autofocus spellcheck="false"></label>
+        <label>Password<input type="password" name="password" placeholder="••••••••"></label>
+        <button type="submit">Sign in →</button>
+      </form>
+      <p class="footnote">{{ footnote }}</p>
+    </section>
+  {% endif %}
+  </main>
+
+  {% if wl_user %}
+  <section class="wl-strip">
+    <span class="wl-title">Wordlists for this lab</span>
+    <a class="wl-link" href="/static/{{ wl_user }}" download>
+      <span class="wl-ico">↓</span> usernames.txt
+      <small>{{ "{:,}".format(wl_user_lines) }} lines</small>
+    </a>
+    <a class="wl-link" href="/static/{{ wl_pass }}" download>
+      <span class="wl-ico">↓</span> passwords.txt
+      <small>{{ "{:,}".format(wl_pass_lines) }} lines</small>
+    </a>
+  </section>
+  {% endif %}
+
+  <footer class="foot">SecureBank training environment · HTTPS simulated · all access is logged</footer>
+</div>
+</body>
+</html>
