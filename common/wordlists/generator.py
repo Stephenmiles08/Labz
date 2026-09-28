@@ -19,16 +19,18 @@ import os
 import random
 
 LAB_USER_SIZES = {1: 2000, 2: 1500, 3: 2500, 4: 2000, 5: 2200, 6: 1500,
-                   7: 1800, 8: 1600, 9: 2000, 10: 1200, 11: 1400}
+                   7: 1800, 8: 1600, 9: 2000, 10: 1200, 11: 1400, 12: 1200, 13: 1300, 14: 1100, 15: 1400, 16: 1200}
 LAB_PASS_SIZES = {1: 3000, 2: 3500, 3: 2000, 4: 4000, 5: 3500, 6: 4500,
-                  7: 3200, 8: 2800, 9: 2500, 10: 1500, 11: 1600}
+                  7: 3200, 8: 2800, 9: 2500, 10: 1500, 11: 1600, 12: 1400, 13: 1500, 14: 1300, 15: 1600, 16: 1500}
 
 # the entries the labs actually accept (must ALL appear in every list)
 REQUIRED_USERS = ["wiener", "carlos", "administrator"]
 LAB_ADMIN_PASS = {1: "dragon", 2: "football", 3: "monkey",
                   4: "sunshine", 5: "iloveyou", 6: "gandalf",
                   7: "freedom", 8: "letmein", 9: "123456",
-                  10: "freedom", 11: "sunshine"}
+                  10: "freedom", 11: "sunshine",
+                  12: "freedom", 13: "letmein", 14: "football",
+                  15: "monkey", 16: "sunshine"}
 
 USER_POOL = [
     "alice", "bob", "carol", "dave", "eve", "frank", "grace", "heidi", "ivan",

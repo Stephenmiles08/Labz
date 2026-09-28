@@ -44,14 +44,19 @@ docker compose down && docker compose up -d        # reset everything
 | 09 | `lab09-2fa-brute-force` | 8109 | 2FA bypass using a brute-force attack | ★★★ |
 | 10 | `lab10-password-reset-broken-logic` | 8110 | Password reset broken logic | ★ |
 | 11 | `lab11-password-reset-poisoning` | 8111 | Password reset poisoning via middleware | ★★ |
+| 12 | `lab12-auth-cookie-trust` | 8112 | Auth cookie trust (PTL authe-01) | ★ |
+| 13 | `lab13-predictable-session-cookie` | 8113 | Predictable session token (PTL authe-02) | ★★ |
+| 14 | `lab14-registration-collision` | 8114 | Case-insensitive login collision (PTL authe-03/04) | ★★ |
+| 15 | `lab15-null-bind` | 8115 | Null bind (PTL ldap-01) | ★★ |
+| 16 | `lab16-ldap-filter-injection` | 8116 | LDAP filter injection (PTL ldap-02) | ★★★ |
 
 ## Playing
 
 - Every lab has the same setup: you also hold a normal account
   `wiener` / `peter`, and the goal is to **log in as `administrator`** and
   read the flag from `/admin`. Each lab has its own flag.
-- The labs bind to **loopback only** (`127.0.0.1:8101–8111`) plus the
-  Tailscale node address (`100.99.154.48:8101–8111`) when the host is on a
+- The labs bind to **loopback only** (`127.0.0.1:8101–8116`) plus the
+  Tailscale node address (`100.99.154.48:8101–8116`) when the host is on a
   tailnet — nothing listens on the LAN or docker bridges.
 - `wordlists/` in this repo contains **starter hints** (a short candidate list)
   — plus, **every lab page offers its own downloadable full wordlists**

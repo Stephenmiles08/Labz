@@ -116,3 +116,48 @@ services:
     networks:
       lab_net:
         ipv4_address: 10.10.0.60
+  lab12-auth-cookie-trust:
+    build:
+      context: .
+      dockerfile: labs/12-auth-cookie-trust/Dockerfile
+    ports: ["127.0.0.1:8112:80", "100.99.154.48:8112:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.61
+  lab13-predictable-session-cookie:
+    build:
+      context: .
+      dockerfile: labs/13-predictable-session-cookie/Dockerfile
+    ports: ["127.0.0.1:8113:80", "100.99.154.48:8113:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.62
+  lab14-registration-collision:
+    build:
+      context: .
+      dockerfile: labs/14-registration-collision/Dockerfile
+    ports: ["127.0.0.1:8114:80", "100.99.154.48:8114:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.63
+  lab15-null-bind:
+    build:
+      context: .
+      dockerfile: labs/15-null-bind/Dockerfile
+    ports: ["127.0.0.1:8115:80", "100.99.154.48:8115:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.64
+  lab16-ldap-filter-injection:
+    build:
+      context: .
+      dockerfile: labs/16-ldap-filter-injection/Dockerfile
+    ports: ["127.0.0.1:8116:80", "100.99.154.48:8116:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.65
