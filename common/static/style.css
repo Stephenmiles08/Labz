@@ -157,6 +157,27 @@ code.flag {
   font-size: 0.95rem; color: var(--text); word-break: break-all;
 }
 
+/* feature pages (2FA / reset / mail / webhook) */
+.mailbox { display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+.mail-item {
+  border: 1px solid var(--panel-border); border-radius: 12px;
+  background: var(--panel-strong); padding: 12px 14px; display: flex;
+  flex-direction: column; gap: 6px; font-size: 0.9rem;
+}
+.mail-item .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.mail-item .subj { font-weight: 650; }
+.mail-body { margin: 0; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; color: var(--muted); }
+.mail-body a, .mail-body a:visited { color: var(--accent); }
+code.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--accent-soft); color: var(--accent);
+  border-radius: 8px; padding: 2px 8px; letter-spacing: 0.08em;
+}
+.wtable { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.85rem; }
+.wtable th, .wtable td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--panel-border); }
+.wtable th { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; }
+.wtable td code { color: var(--accent); }
+
 /* wordlist download strip */
 .wl-strip {
   display: flex; align-items: center; justify-content: center; gap: 10px;

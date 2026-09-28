@@ -39,14 +39,19 @@ docker compose down && docker compose up -d        # reset everything
 | 04 | `lab04-bruteforce-ip-block` | 8104 | Broken brute-force protection, IP block | ★★ |
 | 05 | `lab05-username-enum-account-lock` | 8105 | Username enumeration via account lock | ★★ |
 | 06 | `lab06-bruteforce-multi-credential` | 8106 | Broken brute-force protection, multiple credentials per request | ★★★ |
+| 07 | `lab07-2fa-simple-bypass` | 8107 | 2FA simple bypass | ★ |
+| 08 | `lab08-2fa-broken-logic` | 8108 | 2FA broken logic | ★★ |
+| 09 | `lab09-2fa-brute-force` | 8109 | 2FA bypass using a brute-force attack | ★★★ |
+| 10 | `lab10-password-reset-broken-logic` | 8110 | Password reset broken logic | ★ |
+| 11 | `lab11-password-reset-poisoning` | 8111 | Password reset poisoning via middleware | ★★ |
 
 ## Playing
 
 - Every lab has the same setup: you also hold a normal account
   `wiener` / `peter`, and the goal is to **log in as `administrator`** and
   read the flag from `/admin`. Each lab has its own flag.
-- The labs bind to **loopback only** (`127.0.0.1:8101–8106`) plus the
-  Tailscale node address (`100.99.154.48:8101–8106`) when the host is on a
+- The labs bind to **loopback only** (`127.0.0.1:8101–8111`) plus the
+  Tailscale node address (`100.99.154.48:8101–8111`) when the host is on a
   tailnet — nothing listens on the LAN or docker bridges.
 - `wordlists/` in this repo contains **starter hints** (a short candidate list)
   — plus, **every lab page offers its own downloadable full wordlists**
@@ -63,9 +68,10 @@ docker compose down && docker compose up -d        # reset everything
 1. The flag is the deliverable — show the flag string to your instructor
    (or submit it wherever your course says).
 2. These apps are intended to be broken — on purpose. Do not run this stack
-   on a machine you care about; it binds to `localhost` ports 8101–8106.
+   on a machine you care about; it binds to `localhost` ports 8101–8111.
 3. Restart any lab (`docker compose restart <service>`) to get a clean state
-   — e.g. after you lock an account or trip the IP block.
+   — e.g. after you lock an account, trip the IP block, or burn a reset
+   token.
 
 ## How each lab maps to the real world
 

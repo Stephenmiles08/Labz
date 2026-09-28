@@ -42,6 +42,12 @@
       <p class="footnote">Only the administrator account can open the flag vault.</p>
       {% endif %}
     </section>
+  {% elif content_html %}
+    <section class="card">
+      {% if lab %}<p class="lab-kicker">{{ lab }}</p>{% endif %}
+      {% if desc %}<p class="lab-desc">{{ desc }}</p>{% endif %}
+      {{ content_html | safe }}
+    </section>
   {% else %}
     <section class="card login-card">
       <div class="login-head">

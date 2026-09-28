@@ -66,3 +66,53 @@ services:
     networks:
       lab_net:
         ipv4_address: 10.10.0.55
+
+  lab07-2fa-simple-bypass:
+    build:
+      context: .
+      dockerfile: labs/07-2fa-simple-bypass/Dockerfile
+    ports: ["127.0.0.1:8107:80", "100.99.154.48:8107:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.56
+
+  lab08-2fa-broken-logic:
+    build:
+      context: .
+      dockerfile: labs/08-2fa-broken-logic/Dockerfile
+    ports: ["127.0.0.1:8108:80", "100.99.154.48:8108:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.57
+
+  lab09-2fa-brute-force:
+    build:
+      context: .
+      dockerfile: labs/09-2fa-brute-force/Dockerfile
+    ports: ["127.0.0.1:8109:80", "100.99.154.48:8109:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.58
+
+  lab10-password-reset-broken-logic:
+    build:
+      context: .
+      dockerfile: labs/10-password-reset-broken-logic/Dockerfile
+    ports: ["127.0.0.1:8110:80", "100.99.154.48:8110:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.59
+
+  lab11-password-reset-poisoning:
+    build:
+      context: .
+      dockerfile: labs/11-password-reset-poisoning/Dockerfile
+    ports: ["127.0.0.1:8111:80", "100.99.154.48:8111:80"]
+    restart: unless-stopped
+    networks:
+      lab_net:
+        ipv4_address: 10.10.0.60
